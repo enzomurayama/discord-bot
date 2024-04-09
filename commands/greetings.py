@@ -1,3 +1,4 @@
+import settings
 import discord
 from discord.ext import commands
 
@@ -35,7 +36,7 @@ class Greetings(commands.Cog):
             colour=0x07a330
         )
         embed.add_field(name=":card_box: Repositório", value="Você pode me encontrar aqui: \nhttps://github.com/enzomurayama/discord-bot\a", inline=False)
-        embed.add_field(name=":man_mage: Criador", value="Projeto desenvolvido por: <@239084163569811457>", inline=False)
+        embed.add_field(name=":man_mage: Criador", value=f"Projeto desenvolvido por: <@{settings.ALWABES_SECRET_ID}>", inline=False)
         embed.set_image(url="https://i.pinimg.com/originals/45/1e/3a/451e3afe79bed487254964431dfb168d.gif")
 
         await ctx.send(embed=embed)
