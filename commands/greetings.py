@@ -13,7 +13,7 @@ class Greetings(commands.Cog):
         channel = member.guild.system_channel
 
         embed = discord.Embed(
-            title=f"Boas-vindas a {member.guild}!",
+            title=f"Boas-vindas ao novo membro!",
             description="Agora você faz parte deste servidor incrível! \nNão se esqueça de obedecer as regras.",
             colour=0x07a330
         )
