@@ -20,7 +20,7 @@ class Messages(commands.Cog):
 
         elif int(amount) > 0:
             await ctx.channel.purge(limit=int(amount)+1)
-            await ctx.send(f"Foram apagadas {amount} mensagens!")
+            await ctx.send(f"Foram apagadas {amount} mensagens!", delete_after=5)
         
 
 async def setup(bot):

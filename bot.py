@@ -20,10 +20,12 @@ def bot_start():
     @bot.event
     async def on_command_error(ctx, error):
         if isinstance(error, commands.MissingRequiredArgument):
-            await ctx.send("> Algo deu errado! O comando está incompleto... Tente utilizar ***!help***")
+            await ctx.message.add_reaction("⚠️")
+            await ctx.send("> Algo deu errado! O comando está incompleto. Tente utilizar ***!help***")
         
         elif isinstance(error, commands.MissingPermissions):
-            await ctx.send("> Você não possui as permissões para este comando!  :x:")
+            await ctx.message.add_reaction("🚫")
+            await ctx.send("> Você não possui as permissões para este comando!")
 
 
     bot.run(settings.DISCORD_SECRET_TOKEN)
