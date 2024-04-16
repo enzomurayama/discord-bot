@@ -7,16 +7,11 @@ class Messages(commands.Cog):
         self.bot = bot
 
     # Comando para apagar mensagens do chat
-    @commands.command(
-        description="Apaga um certo número de mensagens do chat. \
-                    \n!clear n, sendo n o número de mensagens que serão apagadas. \
-                    \n!clear all, apaga todas as mensagens do chat.",
-        brief="Limpa mensagens do chat"
-    )
+    @commands.command()
     async def clear(self, ctx, amount="0"):
         if amount == "all":
             await ctx.channel.purge()
-            await ctx.send(f"Todas as mensagens deste canal foram apagadas.")
+            await ctx.send(f"Todas as mensagens deste canal foram apagadas.", delete_after=5)
 
         elif int(amount) > 0:
             await ctx.channel.purge(limit=int(amount)+1)

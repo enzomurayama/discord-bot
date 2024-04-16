@@ -9,7 +9,7 @@ class Greetings(commands.Cog):
 
     # Mensagem de boas-vindas 
     @commands.Cog.listener()
-    async def on_member_join(self, member):
+    async def on_member_join(self, member:discord.Member):
         channel = member.guild.system_channel
 
         embed = discord.Embed(
@@ -25,10 +25,7 @@ class Greetings(commands.Cog):
             await channel.send(embed=embed)
 
     # Mensagem de apresentação do bot
-    @commands.command(
-        description="Comando que apresenta informações sobre o bot.",
-        brief="Informações sobre o bot"
-    )
+    @commands.command()
     async def sobre(self, ctx):
         embed = discord.Embed(
             title=f"Olá, meu nome é {ctx.bot.user.name}!",
